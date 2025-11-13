@@ -24,7 +24,7 @@ export default function Header() {
     { href: '/camping-trekking', label: 'Camping & Trekking' },
     { href: '/bungee-jumping', label: 'Bungee Jumping' },
     { href: '/gallery', label: 'Gallery' },
-    { href: '/faq', label: 'FAQ' },
+    { href: '/faq', label: 'Blog' },
     { href: '/contact', label: 'Contact' },
   ];
 

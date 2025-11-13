@@ -1,189 +1,207 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { MessageCircle } from 'lucide-react';
+import { Calendar, ArrowUpRight, Feather, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-export default function FAQPage() {
-  const faqCategories = [
-    {
-      category: 'General Questions',
-      questions: [
-        {
-          question: 'How do I book an adventure?',
-          answer:
-            'You can book directly through our website, call us at +91 98765 43210, or send us a WhatsApp message. We recommend booking in advance, especially during peak season (October-November and March-June).',
-        },
-        {
-          question: 'What payment methods do you accept?',
-          answer:
-            'We accept cash, UPI, credit/debit cards, and online bank transfers. A small advance payment may be required to confirm your booking, with the balance payable on the day of the activity.',
-        },
-        {
-          question: 'What is your cancellation policy?',
-          answer:
-            'Cancellations made 48 hours before the scheduled activity receive a full refund. Cancellations within 24-48 hours receive 50% refund. No refund for same-day cancellations. Weather-related cancellations are fully refundable or can be rescheduled.',
-        },
-      ],
-    },
-    {
-      category: 'Paragliding',
-      questions: [
-        {
-          question: 'How much does paragliding cost?',
-          answer:
-            'Our tandem paragliding flights start from ₹2,500 for a 15-20 minute short flight and ₹3,500 for a 30-35 minute long flight. All packages include HD video recording, insurance, local transport, and experienced pilot.',
-        },
-        {
-          question: 'What is included in the paragliding package?',
-          answer:
-            'All our packages include HD video recording of your flight, comprehensive insurance coverage, local transport to and from the take-off site, all necessary safety equipment, pre-flight safety briefing, and an experienced certified pilot.',
-        },
-        {
-          question: 'What is the best time for paragliding?',
-          answer:
-            'The best time for paragliding in Bir Billing is from October to June. The peak season is from October to November and March to June when weather conditions are most favorable. Early morning and late afternoon flights offer the best thermals and views.',
-        },
-        {
-          question: 'Is paragliding safe?',
-          answer:
-            'Yes, paragliding with us is extremely safe. We use certified equipment meeting international safety standards, employ only licensed and experienced pilots, conduct thorough safety briefings, and maintain strict safety protocols. Weather conditions are carefully monitored before each flight.',
-        },
-        {
-          question: 'Do I need prior experience?',
-          answer:
-            'No prior experience is required for tandem paragliding. Our experienced pilots handle all technical aspects while you simply enjoy the flight. Basic physical fitness is sufficient.',
-        },
-        {
-          question: 'What is the weight limit?',
-          answer:
-            'The weight limit for tandem paragliding is typically between 30 kg to 100 kg. For passengers outside this range, please contact us in advance to make special arrangements.',
-        },
-      ],
-    },
-    {
-      category: 'Camping & Trekking',
-      questions: [
-        {
-          question: 'What should I bring for camping?',
-          answer:
-            'We provide tents, sleeping bags, and camping equipment. You should bring comfortable clothing, a jacket for cold nights, personal toiletries, a flashlight, and any personal medications. We recommend layers as mountain weather can change quickly.',
-        },
-        {
-          question: 'Are meals included in camping packages?',
-          answer:
-            'Yes, all our camping packages include meals. We serve freshly prepared food using local ingredients. Special dietary requirements can be accommodated with advance notice.',
-        },
-        {
-          question: 'What is the difficulty level of treks?',
-          answer:
-            'We offer treks for all fitness levels. Our day treks are suitable for beginners, while multi-day treks require moderate fitness. Each trek listing includes difficulty ratings and fitness requirements.',
-        },
-      ],
-    },
-    {
-      category: 'Extreme Sports',
-      questions: [
-        {
-          question: 'Is bungee jumping scary?',
-          answer:
-            'Bungee jumping is an adrenaline-pumping activity that many find thrilling rather than scary. Our professional team provides thorough briefing and support. First-timers are welcome, and our safety record is impeccable.',
-        },
-        {
-          question: 'What safety measures are in place?',
-          answer:
-            'All extreme sports activities use internationally certified equipment that is regularly inspected. Activities are supervised by trained professionals with years of experience. Comprehensive safety briefings are mandatory before each activity.',
-        },
-        {
-          question: 'Can I do multiple activities in one day?',
-          answer:
-            'Yes, we offer combo packages that let you experience multiple activities in one day at discounted rates. Contact us to create a customized adventure package.',
-        },
-      ],
-    },
-    {
-      category: 'Practical Information',
-      questions: [
-        {
-          question: 'What should I wear?',
-          answer:
-            'Wear comfortable outdoor clothing. For paragliding, wear full pants and closed shoes (sports or trekking shoes). Avoid loose accessories. For camping and trekking, layered clothing is recommended. For extreme sports, comfortable athletic wear is suitable.',
-        },
-        {
-          question: 'How do I reach Bir Billing?',
-          answer:
-            'Bir Billing is accessible by road from Dharamshala (70 km), Pathankot (140 km), and Chandigarh (240 km). The nearest airport is Dharamshala (Gaggal Airport). We can arrange transportation from these locations.',
-        },
-        {
-          question: 'Do you provide accommodation?',
-          answer:
-            "While we don't directly provide accommodation, we can recommend excellent hotels, guesthouses, and homestays in Bir to suit all budgets. We can also assist with booking.",
-        },
-        {
-          question: 'What if weather is bad on my booking day?',
-          answer:
-            'Safety is our priority. If weather conditions are unsuitable, we will reschedule your activity at no extra charge or provide a full refund. We monitor weather continuously and will inform you in advance of any changes.',
-        },
-      ],
-    },
-  ];
+const blogPosts = [
+  {
+    title: 'Soaring High Above Bir Billing',
+    slug: 'soaring-high-above-bir-billing',
+    date: '12 Nov 2025',
+    readTime: '5 min read',
+    location: 'Billing Launch Point',
+    image:
+      'https://images.pexels.com/photos/1562176/pexels-photo-1562176.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    excerpt:
+      'Experience the heart-pounding moment when you take off from Billing and glide through the Dhauladhar ranges. We capture the wind conditions, pilot tips, and the surreal views you should not miss.',
+    contentHighlights: [
+      'Best time of day for thermals and smooth winds',
+      'Pre-flight rituals that calm the nerves',
+      'Photo spots that capture Bir from the clouds',
+    ],
+  },
+  {
+    title: 'Preparing For Your First Tandem Flight',
+    slug: 'prepping-for-your-first-tandem-flight',
+    date: '03 Nov 2025',
+    readTime: '7 min read',
+    location: 'Bir Training Ground',
+    image:
+      'https://images.pexels.com/photos/12480863/pexels-photo-12480863.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    excerpt:
+      'From what to pack to how to breathe when your feet leave the ridge—this guide walks you through every minute of your first tandem paragliding adventure in Bir Billing.',
+    contentHighlights: [
+      'Packing checklist for mountain weather',
+      'Safety briefing decoded in simple language',
+      'Mindset hacks to enjoy every second in the air',
+    ],
+  },
+  {
+    title: 'Why Bir Billing Is India’s Paragliding Capital',
+    slug: 'why-bir-billing-is-paragliding-capital',
+    date: '22 Oct 2025',
+    readTime: '6 min read',
+    location: 'Bir Village',
+    image:
+      'https://images.pexels.com/photos/3874347/pexels-photo-3874347.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    excerpt:
+      'We map the evolution of Bir Billing from a serene Tibetan colony to the bustling paragliding capital. Discover the local legends, annual competitions, and hidden cafés loved by pilots.',
+    contentHighlights: [
+      'Historic milestones that shaped Bir Billing',
+      'Community-led sustainability initiatives',
+      'Offbeat cafés and stays curated for flyers',
+    ],
+  },
+];
+
+export default function BlogPage() {
+  const [featuredPost, ...otherPosts] = blogPosts;
 
   return (
-    <div className="pt-20">
-      <section className="relative py-20 bg-gradient-to-b from-orange-500 to-orange-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-            Frequently Asked Questions
+    <div className="pt-20 bg-gradient-to-b from-white via-orange-50/30 to-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white">
+        <div className="absolute inset-0 opacity-60 mix-blend-overlay bg-[url('https://images.pexels.com/photos/2894054/pexels-photo-2894054.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <div className="flex items-center justify-center gap-3 mb-6 text-orange-100 font-medium uppercase tracking-[0.3em]">
+            <Feather className="h-5 w-5" />
+            Flight Diaries
+            <Feather className="h-5 w-5 rotate-180" />
+          </div>
+          <h1 className="text-5xl sm:text-6xl font-bold leading-tight mb-6">
+            Stories From The Skies Of Bir Billing
           </h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Find answers to common questions about our adventure activities
+          <p className="text-xl sm:text-2xl text-orange-50/90 max-w-3xl mx-auto leading-relaxed">
+            Real moments, pro tips, and soulful journeys from India’s paragliding
+            capital. Get inspired before you strap in for your next flight.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {faqCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                {category.category}
-              </h2>
-              <Accordion type="single" collapsible className="space-y-4">
-                {category.questions.map((faq, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${categoryIndex}-${index}`}
-                    className="bg-gray-50 border border-gray-200 rounded-lg px-6"
+      <section className="relative -mt-24 pb-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <article className="rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/60 bg-white">
+            <div className="grid lg:grid-cols-2">
+              <div
+                className="h-80 lg:h-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${featuredPost.image})` }}
+              />
+              <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center gap-3 text-sm text-orange-500 font-semibold uppercase tracking-wider mb-6">
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      {featuredPost.date}
+                    </span>
+                    <span>{featuredPost.readTime}</span>
+                    <span className="inline-flex items-center gap-2 text-orange-600/80">
+                      <MapPin className="h-4 w-4" />
+                      {featuredPost.location}
+                    </span>
+                  </div>
+                  <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-snug">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                    {featuredPost.excerpt}
+                  </p>
+                  <ul className="space-y-3 text-gray-700">
+                    {featuredPost.contentHighlights.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <span className="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-10">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-orange-500 hover:bg-orange-600 text-white"
                   >
-                    <AccordionTrigger className="text-left text-lg font-semibold hover:text-orange-500 hover:no-underline">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                    <Link href={`/blog/${featuredPost.slug}`}>
+                      Read Story
+                      <ArrowUpRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
-          ))}
+          </article>
 
-          <div className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-white text-center">
-            <MessageCircle className="h-12 w-12 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
-            <p className="text-lg mb-6">
-              Can't find the answer you're looking for? Our team is here to help!
+          <div className="grid gap-8 mt-16 md:grid-cols-2">
+            {otherPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="group bg-white rounded-3xl overflow-hidden border border-orange-100/60 hover:border-orange-200 shadow-lg shadow-orange-100/40 transition-transform hover:-translate-y-1"
+              >
+                <div
+                  className="h-56 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${post.image})` }}
+                />
+                <div className="p-8 flex flex-col h-full">
+                  <div className="flex items-center gap-3 text-sm text-orange-500 font-semibold uppercase tracking-wider mb-4">
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar className="h-4 w-4" />
+                      {post.date}
+                    </span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {post.excerpt}
+                  </p>
+                  <ul className="space-y-2 text-gray-700 text-sm">
+                    {post.contentHighlights.map((point) => (
+                      <li key={point} className="flex items-start gap-2">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-orange-400"></span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:text-orange-700 transition-colors"
+                    >
+                      Continue Reading
+                      <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white rounded-3xl p-10 sm:p-12 text-center shadow-xl shadow-orange-200/60">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Fly Smarter With Our Adventure Briefings
+            </h2>
+            <p className="text-lg text-orange-50/90 max-w-3xl mx-auto mb-8">
+              Subscribe to get curated flight windows, gear checklists, and local
+              stories from Bir Billing straight to your inbox before your next
+              trip.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-orange-500 hover:bg-gray-100"
-            >
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-orange-600 hover:bg-orange-50 w-full sm:w-auto"
+              >
+                <Link href="/contact">Join The Insider List</Link>
+              </Button>
+              <Link
+                href="/about"
+                className="text-white/80 hover:text-white font-semibold"
+              >
+                Learn more about our team →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
