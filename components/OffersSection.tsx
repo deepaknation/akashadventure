@@ -20,19 +20,20 @@ export default function OffersSection() {
     {
       title: 'Short Flight',
       duration: '15-20 Minutes',
-      price: '₹2,500',
+      price: '₹1,700 +',
       features: [
         'HD Video Recording',
         'Insurance Included',
         'Local Transport',
         'Experienced Pilot',
         'Safety Briefing',
+        'licensed pilots',
       ],
     },
     {
       title: 'Long Flight',
       duration: '30-35 Minutes',
-      price: '₹3,500',
+      price: '₹3,000 +',
       features: [
         'Extended Flight Time',
         'HD Video Recording',

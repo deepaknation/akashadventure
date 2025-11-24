@@ -68,7 +68,7 @@ const blogPosts = [
       <h2>Paragliding Adventures</h2>
       <p>Experience the thrill of flying with our government registered team of 8 certified pilots. We offer:</p>
       <ul>
-        <li>Short Flight (15-20 minutes) - Starting from ₹2,500</li>
+        <li>Short Flight (15-20 minutes) - Starting from ₹2,000</li>
         <li>Long Flight (30-35 minutes) - Starting from ₹3,500</li>
         <li>Cross Country Flight (20+ minutes) - Starting from ₹3,500</li>
       </ul>
