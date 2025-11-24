@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Check, Clock, Video, Shield, Car } from 'lucide-react';
+import { formatBookingFormMessage, getWhatsAppUrl, QUERY_WHATSAPP_NUMBER } from '@/lib/whatsapp';
 
 export default function OffersSection() {
   const [formData, setFormData] = useState({
@@ -44,9 +45,21 @@ export default function OffersSection() {
     },
   ];
 
+  const handlePackageClick = (pkg: typeof packages[0]) => {
+    setFormData(prev => ({
+      ...prev,
+      experience: pkg.title,
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Booking submitted:', formData);
+    const message = formatBookingFormMessage({
+      ...formData,
+      experience: formData.experience || 'Not specified',
+    });
+    const whatsappUrl = getWhatsAppUrl(message, QUERY_WHATSAPP_NUMBER);
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -101,6 +114,7 @@ export default function OffersSection() {
                   ))}
                 </ul>
                 <Button
+                  onClick={() => handlePackageClick(pkg)}
                   className={`w-full ${
                     pkg.popular
                       ? 'bg-orange-500 hover:bg-orange-600'

@@ -12,22 +12,22 @@ export default function FAQSection() {
     {
       question: 'How much does paragliding cost?',
       answer:
-        'Our tandem paragliding flights start from ₹2,500 for a 15-20 minute short flight and ₹3,500 for a 30-35 minute long flight. All packages include HD video recording, insurance, local transport, and experienced pilot.',
+        'Our tandem paragliding flights cost ₹2,000 per person for single person flights and ₹1,700 per person for group bookings (2+ persons). Cross country flights (20+ minutes) start from ₹3,500. All packages include GOPRO video recording, pick up & drop service, and well-skilled pilots with 10+ years experience. Additional ₹500 charge applies for passengers weighing 90-110 kg.',
     },
     {
       question: 'What is included in the package?',
       answer:
-        'All our packages include HD video recording of your flight, comprehensive insurance coverage, local transport to and from the take-off site, all necessary safety equipment, pre-flight safety briefing, and an experienced certified pilot.',
+        'All our packages include GOPRO video shooting, pick up & drop service, 10-20 minutes flying time in the air, well-skilled pilots with 10+ years experience, all necessary safety gear including harnesses, helmets, and reserve parachutes, comprehensive insurance coverage, and pre-flight safety briefings.',
     },
     {
       question: 'What is the best time for paragliding in Bir Billing?',
       answer:
-        'The best time for paragliding is from October to June. The peak season is from October to November and March to June when weather conditions are most favorable. Early morning and late afternoon flights offer the best thermals and views.',
+        'The best flying months are September to November, offering clear skies and stable winds. These months provide perfect weather conditions for paragliding with excellent thermals and stunning views of the Himachal Pradesh landscape.',
     },
     {
       question: 'Is paragliding safe?',
       answer:
-        'Yes, paragliding with us is extremely safe. We use certified equipment that meets international safety standards, employ only licensed and experienced pilots, conduct thorough safety briefings, and maintain strict safety protocols. Weather conditions are carefully monitored before each flight.',
+        'Yes, paragliding with us is extremely safe. We are government registered and have a team of 8 certified paragliding licensed pilots with 10+ years of experience. All paragliding sessions are conducted with certified tandem pilots, safety gear including harnesses, helmets, and reserve parachutes. Pre-flight safety briefings and equipment checks are mandatory. Weather conditions are carefully monitored, and flights may be rescheduled for adverse weather conditions.',
     },
     {
       question: 'Do I need any prior experience?',
@@ -37,7 +37,7 @@ export default function FAQSection() {
     {
       question: 'What is the weight limit?',
       answer:
-        'The weight limit for tandem paragliding is typically between 30 kg to 100 kg. For passengers outside this range, please contact us in advance to make special arrangements.',
+        'The weight limit for participants is between 28 kg to 90 kg. If you weigh between 90 kg to 110 kg, an additional charge of ₹500 applies. For participants outside this range, please contact us in advance to make special arrangements. The recommended age is 16-45 years.',
     },
     {
       question: 'How do I book?',

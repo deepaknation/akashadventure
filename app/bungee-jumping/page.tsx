@@ -112,7 +112,11 @@ export default function BungeeJumpingPage() {
                         : 'bg-gray-900 hover:bg-gray-800'
                     }`}
                   >
-                    <Link href="/contact">Book Now</Link>
+                    <Link 
+                      href={`/contact?service=Bungee Jumping&package=${encodeURIComponent(activity.title)}&price=${encodeURIComponent(activity.price)}&duration=${encodeURIComponent(activity.height)}`}
+                    >
+                      Book Now
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -182,7 +186,7 @@ export default function BungeeJumpingPage() {
                 className="absolute inset-0 bg-cover bg-center rounded-2xl shadow-2xl"
                 style={{
                   backgroundImage:
-                    'url(https://images.pexels.com/photos/163407/box-sport-men-training-163407.jpeg?auto=compress&cs=tinysrgb&w=1200)',
+                    'url(/gallery/bungee.jpg)',
                 }}
               ></div>
             </div>

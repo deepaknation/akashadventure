@@ -9,12 +9,22 @@ export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    'https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=800',
+    '/gallery/DSC_0020.JPG',
+    '/gallery/DSC_0166.JPG',
+    '/gallery/DSCN0570.JPG',
+    '/gallery/IMG_20200419_094708.jpg',
+    '/gallery/IMG_20230519_155709_702.jpg',
+    '/gallery/IMG_20251012_145411587_HDR.jpg',
+    '/gallery/IMG_20251017_151505215_HDR.jpg',
+    '/gallery/IMG_20251017_151509319_HDR.jpg',
+    '/gallery/IMG-20251120-WA0002.jpg',
+    '/gallery/IMG-20251120-WA0003.jpg',
+    '/gallery/IMG-20251120-WA0004.jpg',
+    '/gallery/IMG-20251120-WA0005.jpg',
+    '/gallery/IMG-20251120-WA0007.jpg',
+    '/gallery/20230513_050740.jpg',
+    '/gallery/FB_IMG_1763828187409.jpg',
+    '/gallery/FB_IMG_1763828388267.jpg',
   ];
 
   return (
@@ -31,7 +41,7 @@ export default function GallerySection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {images.map((image, index) => (
+          {images.slice(0, 6).map((image, index) => (
             <div
               key={index}
               className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"

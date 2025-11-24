@@ -8,39 +8,41 @@ export default function CampingTrekkingPage() {
     {
       title: 'Overnight Camping',
       location: 'Bir Forest Camp',
-      price: '₹1,500',
+      price: '₹1,000',
       features: [
         'Tent accommodation',
+        'Dinner & breakfast included',
+        'Camping equipment provided',
         'Bonfire evening',
-        'Dinner & breakfast',
-        'Camping equipment',
-        'Guide included',
+        'Expert guide included',
       ],
     },
     {
-      title: 'Rajgundha Trek',
-      location: '2-Day Trek',
-      price: '₹3,500',
+      title: 'Short Trekking',
+      location: 'Bir to Billing',
+      price: 'Contact for pricing',
       features: [
-        'Guided trek',
-        'Camping at Rajgundha',
-        'All meals included',
-        'Camping equipment',
-        'Local guide',
-        'Beautiful meadows',
+        '4:30 hours trek duration',
+        'Departure: 08:00 AM',
+        'Breakfast needed (carry with you)',
+        'Experienced guide included',
+        'Scenic views & photo opportunities',
       ],
       popular: true,
     },
     {
-      title: 'Billing Trek',
-      location: 'Day Trek',
-      price: '₹1,200',
+      title: 'Long Trekking',
+      location: 'Billing to Rajgundha',
+      price: 'Contact for pricing',
       features: [
-        'Trek to Billing',
-        'Experienced guide',
-        'Packed lunch',
-        'Scenic views',
-        'Photo opportunities',
+        '5:30 hours to reach destination',
+        'Departure: 07:00 AM',
+        'Breakfast & water bottle needed',
+        'Lunch at 01:00 PM',
+        '2 hours rest included',
+        'Overnight stay at camp',
+        'Return trek next day 07:00 AM',
+        'Expert guide throughout',
       ],
     },
   ];
@@ -131,7 +133,11 @@ export default function CampingTrekkingPage() {
                         : 'bg-gray-900 hover:bg-gray-800'
                     }`}
                   >
-                    <Link href="/contact">Book Now</Link>
+                    <Link 
+                      href={`/contact?service=Camping & Trekking&package=${encodeURIComponent(pkg.title)}&price=${encodeURIComponent(pkg.price)}&duration=${encodeURIComponent(pkg.location)}`}
+                    >
+                      Book Now
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -194,7 +200,7 @@ export default function CampingTrekkingPage() {
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600"
                 >
-                  <Link href="/contact">Plan Your Trek</Link>
+                  <Link href="/contact?service=Camping & Trekking">Plan Your Trek</Link>
                 </Button>
               </div>
             </div>

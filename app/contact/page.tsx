@@ -1,14 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { formatContactFormMessage, getWhatsAppUrl, QUERY_WHATSAPP_NUMBER } from '@/lib/whatsapp';
 
-export default function ContactPage() {
+function ContactForm() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,23 +21,43 @@ export default function ContactPage() {
     message: '',
   });
 
+  // Auto-fill form from URL parameters
+  useEffect(() => {
+    const service = searchParams.get('service');
+    const packageName = searchParams.get('package');
+    const price = searchParams.get('price');
+    const duration = searchParams.get('duration');
+    
+    if (service) {
+      setFormData(prev => ({
+        ...prev,
+        service: packageName ? `${service} - ${packageName}` : service,
+        message: price && duration 
+          ? `Package: ${packageName || service}\nPrice: ${price}\nDuration: ${duration}`
+          : prev.message
+      }));
+    }
+  }, [searchParams]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    const message = formatContactFormMessage(formData);
+    const whatsappUrl = getWhatsAppUrl(message, QUERY_WHATSAPP_NUMBER);
+    window.open(whatsappUrl, '_blank');
   };
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'Phone',
-      details: '+91 98765 43210',
-      link: 'tel:+919876543210',
+      details: '+91 7580053446, +91 7590053446',
+      link: 'tel:+917580053446',
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
-      details: '+91 98765 43210',
-      link: 'https://wa.me/919876543210',
+      details: '+91 7580053446',
+      link: 'https://wa.me/917580053446',
     },
     {
       icon: Mail,
@@ -45,8 +68,8 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: 'Location',
-      details: 'Bir Billing, Himachal Pradesh',
-      link: '#',
+      details: 'Bir Billing Road Near Tourism Office',
+      link: 'https://maps.app.goo.gl/MFSBRLXp1MLNWoMn9?g_st=awb',
     },
   ];
 
@@ -81,7 +104,7 @@ export default function ContactPage() {
                       <Label htmlFor="name">Full Name *</Label>
                       <Input
                         id="name"
-                        placeholder="John Doe"
+                        placeholder="Name"
                         value={formData.name}
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
@@ -94,7 +117,7 @@ export default function ContactPage() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder="Email"
                         value={formData.email}
                         onChange={(e) =>
                           setFormData({ ...formData, email: e.target.value })
@@ -107,7 +130,7 @@ export default function ContactPage() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 7580053446"
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
@@ -200,20 +223,62 @@ export default function ContactPage() {
                 </div>
               </div>
 
+              <div className="mt-8 bg-gray-50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  Payment Methods
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-gray-700">
+                  <div className="flex items-center">
+                    <span className="text-sm">Google Pay</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-sm">Phone Pe</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-sm">Cash</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-sm">Net Banking</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="text-sm">Paytm</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="mt-8 rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3395.8567896543217!2d76.7251!3d32.0530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDAzJzEwLjgiTiA3NsKwNDMnMzAuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2576.0570847189883!2d76.7236034!3d32.0448823!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904b94c4119f2c5%3A0x7a6ecfe92348d456!2sBir%20Billing%20Paragliding%20%7C%20Akash%20Adventures!5e1!3m2!1sen!2sin!4v1763885851840!5m2!1sen!2sin"
                   width="100%"
-                  height="300"
+                  height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                <div className="bg-white p-4 text-center">
+                  <a
+                    href="https://maps.app.goo.gl/MFSBRLXp1MLNWoMn9?g_st=awb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-500 hover:text-orange-600 font-semibold"
+                  >
+                    View on Google Maps →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="pt-20 min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ContactForm />
+    </Suspense>
   );
 }

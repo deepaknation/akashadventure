@@ -46,22 +46,29 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Akash Adventures is the largest and most trusted adventure company in Bir
-                  Billing, Himachal Pradesh. With over a decade of experience in the adventure
-                  tourism industry, we have established ourselves as the premier choice for
-                  paragliding and adventure sports in the region.
+                  Akash Adventures is a government registered adventure company in Bir Billing,
+                  Himachal Pradesh. We provide the best paragliding services in Bir Billing with
+                  a team of eight certified paragliding licensed professionals who have 10+ years
+                  of experience in the adventure tourism industry. We have established ourselves as
+                  the premier choice for paragliding and adventure sports in the region.
                 </p>
                 <p>
                   Founded with a passion for adventure and a commitment to safety, we specialize
                   in tandem paragliding, camping, trekking, bungee jumping, and various extreme
-                  sports. Our team of certified professionals ensures that every adventure is
-                  not only thrilling but also completely safe.
+                  sports. Our team of certified professionals with paragliding licenses ensures
+                  that every adventure is not only thrilling but also completely safe.
                 </p>
                 <p>
                   We take pride in our state-of-the-art equipment, comprehensive insurance
                   coverage, and personalized service. Whether you're a first-time flyer or an
                   experienced adventurer, we create unforgettable experiences tailored to your
-                  comfort level.
+                  comfort level. All our paragliding sessions are conducted with certified tandem
+                  pilots, safety gear including harnesses, helmets, and reserve parachutes.
+                </p>
+                <p>
+                  Our office is located at Bir Billing Road Near Tourism Office, and we're open
+                  7 days a week to serve you. We accept multiple payment methods including Google Pay,
+                  Phone Pe, Cash, Net Banking, and Paytm for your convenience.
                 </p>
               </div>
             </div>
@@ -70,7 +77,7 @@ export default function AboutPage() {
                 className="absolute inset-0 bg-cover bg-center rounded-2xl shadow-2xl"
                 style={{
                   backgroundImage:
-                    'url(https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=1200)',
+                    'url(/gallery/DSC_0166.JPG)',
                 }}
               ></div>
             </div>

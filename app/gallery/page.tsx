@@ -7,18 +7,22 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    'https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1537635/pexels-photo-1537635.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    '/gallery/DSC_0020.JPG',
+    '/gallery/DSC_0166.JPG',
+    '/gallery/DSCN0570.JPG',
+    '/gallery/IMG_20200419_094708.jpg',
+    '/gallery/IMG_20230519_155709_702.jpg',
+    '/gallery/IMG_20251012_145411587_HDR.jpg',
+    '/gallery/IMG_20251017_151505215_HDR.jpg',
+    '/gallery/IMG_20251017_151509319_HDR.jpg',
+    '/gallery/IMG-20251120-WA0002.jpg',
+    '/gallery/IMG-20251120-WA0003.jpg',
+    '/gallery/IMG-20251120-WA0004.jpg',
+    '/gallery/IMG-20251120-WA0005.jpg',
+    '/gallery/IMG-20251120-WA0007.jpg',
+    '/gallery/20230513_050740.jpg',
+    '/gallery/FB_IMG_1763828187409.jpg',
+    '/gallery/FB_IMG_1763828388267.jpg',
   ];
 
   const categories = ['All', 'Paragliding', 'Camping', 'Trekking', 'Extreme Sports'];
