@@ -115,6 +115,14 @@ const blogPosts = [
   },
 ];
 
+// --- YEH CODE ADD KIYA HAI (Start) ---
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+// --- YEH CODE ADD KIYA HAI (End) ---
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug);
 
@@ -188,5 +196,3 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-
-
