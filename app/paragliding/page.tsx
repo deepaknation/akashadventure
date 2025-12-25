@@ -8,7 +8,7 @@ export default function ParaglidingPage() {
     {
       title: 'Single Person Flight',
       duration: '15-20 Minutes',
-      price: '₹2,000',
+      price: '₹3,000',
       features: [
         'Perfect for solo travelers',
         'GOPRO video recording included',
@@ -22,7 +22,7 @@ export default function ParaglidingPage() {
     {
       title: 'Group Flight',
       duration: '15-20 Minutes',
-      price: '₹1,700',
+      price: '₹3,000',
       features: [
         'Best value for groups',
         'GOPRO video recording included',
@@ -37,7 +37,7 @@ export default function ParaglidingPage() {
     {
       title: 'Cross Country Flight',
       duration: '20+ Minutes',
-      price: '₹3,500',
+      price: '₹4,500',
       features: [
         'Extended flight time (20+ min)',
         'More aerial maneuvers',
@@ -84,11 +84,10 @@ export default function ParaglidingPage() {
             {packages.map((pkg, index) => (
               <Card
                 key={index}
-                className={`relative ${
-                  pkg.popular
+                className={`relative ${pkg.popular
                     ? 'border-orange-500 border-2 shadow-xl scale-105'
                     : 'border-gray-200'
-                }`}
+                  }`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -119,13 +118,12 @@ export default function ParaglidingPage() {
                   </ul>
                   <Button
                     asChild
-                    className={`w-full ${
-                      pkg.popular
+                    className={`w-full ${pkg.popular
                         ? 'bg-orange-500 hover:bg-orange-600'
                         : 'bg-gray-900 hover:bg-gray-800'
-                    }`}
+                      }`}
                   >
-                    <Link 
+                    <Link
                       href={`/contact?service=Paragliding&package=${encodeURIComponent(pkg.title)}&price=${encodeURIComponent(pkg.price)}&duration=${encodeURIComponent(pkg.duration)}`}
                     >
                       Book Now
