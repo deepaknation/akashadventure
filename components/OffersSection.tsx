@@ -81,10 +81,11 @@ export default function OffersSection() {
           {packages.map((pkg, index) => (
             <Card
               key={index}
-              className={`relative ${pkg.popular
+              className={`relative ${
+                pkg.popular
                   ? 'border-orange-500 border-2 shadow-xl scale-105'
                   : 'border-gray-200'
-                }`}
+              }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -115,10 +116,11 @@ export default function OffersSection() {
                 </ul>
                 <Button
                   onClick={() => handlePackageClick(pkg)}
-                  className={`w-full ${pkg.popular
+                  className={`w-full ${
+                    pkg.popular
                       ? 'bg-orange-500 hover:bg-orange-600'
                       : 'bg-gray-900 hover:bg-gray-800'
-                    }`}
+                  }`}
                 >
                   Book Now
                 </Button>

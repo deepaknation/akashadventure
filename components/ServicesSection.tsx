@@ -10,7 +10,7 @@ export default function ServicesSection() {
       description: 'Experience the thrill of flying with our government registered team of 8 certified pilots with 10+ years experience in the world-famous Bir Billing paragliding site.',
       image: '/gallery/IMG-20251120-WA0004.jpg',
       features: ['15-20 minute flights', 'GOPRO video included', 'Pick up & drop service'],
-      price: 'Starting from ₹1,700',
+      price: 'Starting from ₹3,000',
       link: '/paragliding',
     },
     {

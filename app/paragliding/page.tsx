@@ -85,8 +85,8 @@ export default function ParaglidingPage() {
               <Card
                 key={index}
                 className={`relative ${pkg.popular
-                    ? 'border-orange-500 border-2 shadow-xl scale-105'
-                    : 'border-gray-200'
+                  ? 'border-orange-500 border-2 shadow-xl scale-105'
+                  : 'border-gray-200'
                   }`}
               >
                 {pkg.popular && (
@@ -119,8 +119,8 @@ export default function ParaglidingPage() {
                   <Button
                     asChild
                     className={`w-full ${pkg.popular
-                        ? 'bg-orange-500 hover:bg-orange-600'
-                        : 'bg-gray-900 hover:bg-gray-800'
+                      ? 'bg-orange-500 hover:bg-orange-600'
+                      : 'bg-gray-900 hover:bg-gray-800'
                       }`}
                   >
                     <Link
@@ -212,11 +212,11 @@ export default function ParaglidingPage() {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">Single Person</span>
-                  <span className="text-orange-500 font-semibold text-lg">₹2,000 per person</span>
+                  <span className="text-orange-500 font-semibold text-lg">₹3,000 per person</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-700">Group (2+ persons)</span>
-                  <span className="text-orange-500 font-semibold text-lg">₹1,700 per person</span>
+                  <span className="text-orange-500 font-semibold text-lg">₹6,000 per person</span>
                 </div>
                 <div className="pt-3 border-t border-orange-200">
                   <p className="text-sm text-gray-600">
